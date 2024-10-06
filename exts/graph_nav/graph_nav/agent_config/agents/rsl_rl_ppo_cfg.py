@@ -12,6 +12,7 @@ class PPOBaseCfg(RslRlOnPolicyRunnerCfg):
     max_iterations = 1500
     save_interval = 50
     experiment_name = "anymal_d_rough"
+    wandb_project = "graph_nav"
     empirical_normalization = False
     policy = RslRlPpoActorCriticCfg(
         init_noise_std=1.0,
@@ -49,5 +50,5 @@ class PPOCfg(PPOBaseCfg):
 ######################################################################
 @configclass
 class PPOCfgDEV(PPOCfg):
-    logger = "tensorboard"
+    logger = "wandb"
     run_name = "Debug"
